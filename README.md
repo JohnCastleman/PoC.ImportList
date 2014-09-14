@@ -3,6 +3,9 @@ PoC.ImportList
 
 Proof of concept for using Caliburn view contexts to support different views over the same data
 
+![Image of List](PoC.ImportList-1.PNG)
+![Image of Details](PoC.ImportList-2.PNG)
+
 
 Shell
 -----
