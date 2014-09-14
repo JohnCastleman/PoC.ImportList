@@ -11,9 +11,17 @@ namespace PoC.ImportList
         {
             if (Execute.InDesignMode)
             {
+                Sequence = 1;
                 OfficerName = "Bob Smith";
                 Started = new DateTime(2014, 9, 14, 7, 45, 19);
             }
+        }
+
+        int _sequence;
+        public int Sequence
+        {
+            get { return _sequence; }
+            set { this.RaiseAndSetIfChanged(ref _sequence, value); }
         }
 
         string _officerName;

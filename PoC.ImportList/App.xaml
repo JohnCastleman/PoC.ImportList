@@ -10,6 +10,13 @@
                     <importList:AppBootstrapper x:Key="bootstrapper" />
 
                     <!-- Transparent backgrounds are a problem in the dark VS designer -->
+                    <Style TargetType="{x:Type Window}">
+                        <Style.Triggers>
+                            <Trigger Property="componentModel:DesignerProperties.IsInDesignMode" Value="true">
+                                <Setter Property="Background" Value="WhiteSmoke" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
                     <Style TargetType="{x:Type UserControl}">
                         <Style.Triggers>
                             <Trigger Property="componentModel:DesignerProperties.IsInDesignMode" Value="true">
