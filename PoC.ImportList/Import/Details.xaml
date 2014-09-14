@@ -9,10 +9,10 @@
              mc:Ignorable="d" 
              d:DataContext="{d:DesignInstance Type={x:Type importList:ImportViewModel}, IsDesignTimeCreatable=True}">
     <st:AutoGrid Columns="*" Rows="Auto,*,Auto" ChildMargin="5" Margin="5">
-        <st:AutoGrid Columns="Auto,*,Auto" ChildVerticalAlignment="Center">
+        <st:AutoGrid Columns="Auto,*,Auto" ChildVerticalAlignment="Center" ChildMargin="5">
             <Button Content="Back" cal:Message.Attach="List"/>
             <TextBlock Text="{Binding ActiveItem.OfficerName}" FontSize="16"/>
-            <st:AutoGrid ChildMargin="3" Margin="2" ChildVerticalAlignment="Center">
+            <st:AutoGrid ChildMargin="5,0" ChildVerticalAlignment="Center">
                 <Button Content="Prev" cal:Message.Attach="Previous"/>
                 <TextBlock>
                     <Run Text="{Binding ActiveItem.Sequence}"/>
@@ -22,7 +22,9 @@
                 <Button Content="Next" cal:Message.Attach="Next"/>
             </st:AutoGrid>
         </st:AutoGrid>
-        <Border Background="Black" Width="500" Height="300"/>
+        <Border Background="Black" Width="500" Height="300">
+            <TextBlock Text="Playback Goes Here" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Border>
         <st:AutoGrid Columns="*,Auto">
             <TextBlock/>
             <Button Content="Done" cal:Message.Attach="List"/>

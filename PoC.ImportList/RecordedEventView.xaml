@@ -12,6 +12,6 @@
     <st:AutoGrid Columns="*,Auto,Auto" ChildMargin="5" ChildVerticalAlignment="Center">
         <TextBlock Text="{Binding OfficerName}" FontSize="18"/>
         <TextBlock Text="{Binding Started}"/>
-        <Button Content="Details" cal:Message.Attach="Details($dataContext)" Padding="10,3"/>
+        <Button Content="Details" cal:Message.Attach="Details($dataContext)"/>
     </st:AutoGrid>
 </UserControl>

@@ -8,6 +8,10 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary>
                     <importList:AppBootstrapper x:Key="bootstrapper" />
+                    
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Padding" Value="10,3"/>
+                    </Style>
 
                     <!-- Transparent backgrounds are a problem in the dark VS designer -->
                     <Style TargetType="{x:Type Window}">
