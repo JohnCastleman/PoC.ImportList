@@ -1,12 +1,22 @@
 ﻿<Application x:Class="PoC.ImportList.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:importList="clr-namespace:PoC.ImportList">
+             xmlns:importList="clr-namespace:PoC.ImportList"
+             xmlns:componentModel="clr-namespace:System.ComponentModel;assembly=PresentationFramework">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary>
                     <importList:AppBootstrapper x:Key="bootstrapper" />
+
+                    <!-- Transparent backgrounds are a problem in the dark VS designer -->
+                    <Style TargetType="{x:Type UserControl}">
+                        <Style.Triggers>
+                            <Trigger Property="componentModel:DesignerProperties.IsInDesignMode" Value="true">
+                                <Setter Property="Background" Value="WhiteSmoke" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
                 </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

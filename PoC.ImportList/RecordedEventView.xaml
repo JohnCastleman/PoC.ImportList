@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="PoC.ImportList.RecordedEventView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:st="clr-namespace:AutoGrid;assembly=SpicyTaco.AutoGrid"
+             xmlns:local="clr-namespace:PoC.ImportList"
+             mc:Ignorable="d"
+             d:DesignWidth="400"
+             d:DataContext="{d:DesignInstance Type={x:Type local:RecordedEventViewModel}, IsDesignTimeCreatable=True}">
+    <st:AutoGrid Columns="*,Auto,Auto" ChildMargin="5" ChildVerticalAlignment="Center">
+        <TextBlock Text="{Binding OfficerName}" FontSize="18"/>
+        <TextBlock Text="{Binding Started}"/>
+        <Button Content="Details" Padding="10,3"/>
+    </st:AutoGrid>
+</UserControl>
