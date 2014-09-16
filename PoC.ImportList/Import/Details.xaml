@@ -7,7 +7,8 @@
              xmlns:st="clr-namespace:AutoGrid;assembly=SpicyTaco.AutoGrid"
              xmlns:cal="http://www.caliburnproject.org"
              mc:Ignorable="d" 
-             d:DataContext="{d:DesignInstance Type={x:Type importList:ImportViewModel}, IsDesignTimeCreatable=True}">
+             d:DataContext="{d:DesignInstance Type={x:Type importList:ImportViewModel}, IsDesignTimeCreatable=True}"
+             cal:Bind.AtDesignTime="True">
     <st:AutoGrid Columns="*" Rows="Auto,*,Auto" ChildMargin="5" Margin="5">
         <st:AutoGrid Columns="Auto,*,Auto" ChildVerticalAlignment="Center" ChildMargin="5">
             <Button Content="Back" cal:Message.Attach="List"/>

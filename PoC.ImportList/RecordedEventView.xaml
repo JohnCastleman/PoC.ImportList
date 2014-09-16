@@ -8,10 +8,29 @@
              xmlns:cal="http://www.caliburnproject.org"
              mc:Ignorable="d"
              d:DesignWidth="400"
-             d:DataContext="{d:DesignInstance Type={x:Type local:RecordedEventViewModel}, IsDesignTimeCreatable=True}">
-    <st:AutoGrid Columns="*,Auto,Auto" ChildMargin="5" ChildVerticalAlignment="Center">
-        <TextBlock Text="{Binding OfficerName}" FontSize="18"/>
-        <TextBlock Text="{Binding Started}"/>
-        <Button Content="Details" cal:Message.Attach="Details($dataContext)"/>
-    </st:AutoGrid>
+             d:DataContext="{d:DesignInstance Type={x:Type local:RecordedEventViewModel}, IsDesignTimeCreatable=True}"
+             cal:Bind.AtDesignTime="True">
+    <UserControl.Resources>
+        <Style x:Key="ImportItemStyle" TargetType="{x:Type Border}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Margin" Value="2"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ShouldImport}" Value="True">
+                    <Setter Property="Background" Value="DarkSeaGreen"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="BorderBrush" Value="DarkOliveGreen"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <Border Style="{StaticResource ImportItemStyle}">
+        <st:AutoGrid Columns="Auto,*,Auto,Auto" ChildMargin="5" ChildVerticalAlignment="Center">
+            <CheckBox Content="Import" IsChecked="{Binding ShouldImport}"/>
+            <TextBlock Text="{Binding OfficerName}" FontSize="18"/>
+            <TextBlock Text="{Binding Started}"/>
+            <Button Content="Details" cal:Message.Attach="Details($dataContext)"/>
+        </st:AutoGrid>
+    </Border>
 </UserControl>

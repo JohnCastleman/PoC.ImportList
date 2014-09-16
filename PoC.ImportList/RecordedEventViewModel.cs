@@ -9,6 +9,7 @@ namespace PoC.ImportList
     {
         public RecordedEventViewModel()
         {
+            ShouldImport = true;
             if (Execute.InDesignMode)
             {
                 Sequence = 1;
@@ -22,6 +23,13 @@ namespace PoC.ImportList
         {
             get { return _sequence; }
             set { this.RaiseAndSetIfChanged(ref _sequence, value); }
+        }
+
+        bool _shouldImport;
+        public bool ShouldImport
+        {
+            get { return _shouldImport; }
+            set { this.RaiseAndSetIfChanged(ref _shouldImport, value); }
         }
 
         string _officerName;

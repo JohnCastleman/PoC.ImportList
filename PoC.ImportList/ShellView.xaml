@@ -7,7 +7,8 @@
         xmlns:local="clr-namespace:PoC.ImportList"
         SizeToContent="WidthAndHeight"
         mc:Ignorable="d"
-        d:DataContext="{d:DesignInstance Type=local:ShellViewModel, IsDesignTimeCreatable=True}">
+        d:DataContext="{d:DesignInstance Type=local:ShellViewModel, IsDesignTimeCreatable=True}"
+        cal:Bind.AtDesignTime="True">
 
     <Grid Background="White">
         <ContentControl x:Name="ActiveItem" cal:View.Context="{Binding ActiveItem.ViewContext}"/>
