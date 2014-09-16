@@ -5,16 +5,17 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:PoC.ImportList"
              xmlns:cal="http://www.caliburnproject.org"
-             mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="500"
+             xmlns:spinner="clr-namespace:PoC.ImportList.Spinner"
+             mc:Ignorable="d"
              d:DataContext="{d:DesignInstance Type={x:Type local:ImportProgressViewModel}, IsDesignTimeCreatable=True}"
              cal:Bind.AtDesignTime="True">
-    <Grid>
-        <TextBlock FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center">
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="40">
+        <spinner:DotSpinner VerticalAlignment="Center" Margin="5"/>
+        <TextBlock FontSize="24" Margin="5">
             <Run Text="Currently importing"/>
             <Run Text="{Binding CurrentIndex}"/>
             <Run Text="of"/>
             <Run Text="{Binding EventsToImport.Count, Mode=OneWay}"/>
         </TextBlock>
-    </Grid>
+    </StackPanel>
 </UserControl>
